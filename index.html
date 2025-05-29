@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTAFOLIO DESARROLLO</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-image: url('fondo.jpg'); /* User's background image restored */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: auto;
+      overflow: hidden;
+      padding: 0 20px;
+    }
+
+    #mainheader {
+      color: #fff; /* Text color for header, assuming dark background */
+      padding-bottom: 10px;
+    }
+
+    #navbar {
+      background: rgba(51, 51, 51, 0.8); /* Semi-transparent navbar */
+      color: #fff;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navbar .logo img {
+      height: 50px; /* Adjust as needed */
+      vertical-align: middle;
+    }
+
+    #navbar ul {
+      padding: 0;
+      list-style: none;
+      float: right;
+    }
+
+    #navbar ul li {
+      display: inline;
+      margin-left: 20px;
+    }
+    
+    /* User's specific nav link styling from original */
+    nav ul li a {
+      background-color: rgba(255, 255, 255, 0.8); /* fondo blanco translúcido */
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: black; /* color de texto legible sobre fondo blanco */
+      transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: rgba(255, 255, 255, 1); /* opaco al pasar el mouse */
+      color: #333;
+    }
+    
+    #showcase {
+      min-height: 250px; /* Adjusted height */
+      text-align: center;
+      color: #fff; 
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      /* background: rgba(0,0,0,0.3); Optional overlay if background makes text hard to read */
+      border-radius: 8px; /* Optional: rounded corners for showcase area */
+      margin-bottom: 20px; /* Space below showcase */
+    }
+
+    #showcase h1 { /* This was not in original showcase, but from my previous example */
+      font-size: 3em;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text shadow for readability */
+    }
+
+    #showcase p { /* This was not in original showcase */
+      font-size: 1.2em;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    #showcase .btn { /* Copied from original showcase */
+      display: inline-block;
+      font-size: 18px;
+      color: #fff;
+      background: #e67e22; /* Example color from previous */
+      padding: 13px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+    #showcase .btn:hover {
+      background: #d35400;
+    }
+
+    .mensaje-central { /* From original */
+      text-align: center;
+      padding: 30px 20px;
+      background-color: rgba(0,0,0,0.6); /* Slightly more opaque for readability */
+      color: #fff;
+      border-radius: 10px;
+      margin: 20px auto;
+      max-width: 800px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .mensaje-central h1 {
+        font-size: 2.2em;
+        margin-bottom: 0.5em;
+    }
+    .mensaje-central p {
+        font-size: 1.1em;
+    }
+
+    section {
+      padding: 25px 0;
+      border-bottom: 1px #ccc dotted;
+      background-color: rgba(255, 255, 255, 0.15); /* Slightly more opaque for section visibility */
+      border-radius: 8px; 
+      margin: 20px auto; /* Centering sections if container width allows */
+      max-width: 90%; /* Max width for sections */
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    }
+    section:last-child {
+        border-bottom: none;
+    }
+    
+    h2 {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #333; 
+    }
+    section .container > h2 {
+        display: block; 
+        text-align: center;
+    }
+    section .container > h2 span { /* Using span for the background to fit text */
+        background-color: rgba(255, 255, 255, 0.85); /* Slightly more opaque */
+        padding: 12px 22px; /* A bit more padding */
+        border-radius: 10px;
+        color: #2c3e50; /* Darker text for contrast */
+        font-size: 1.5em; /* Larger heading text */
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .unit-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .unit {
+      background: #ffffff; 
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: calc(30% - 40px); 
+      min-width: 260px; 
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .unit:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    }
+
+    .unit img {
+      max-width: 100%;
+      height: 150px; 
+      object-fit: cover; 
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+
+    .unit h3 {
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .unit a {
+      display: inline-block;
+      background: #5cb85c; 
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .unit a:hover {
+      background: #4cae4c;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center; 
+      gap: 20px; /* Increased gap */
+    }
+    /* Styling for items within .row like images or document links */
+    .document-item {
+        background-color: #f9f9f9;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 15px;
+        text-align: center;
+        width: calc(45% - 20px); /* Two items per row, adjust as needed */
+        min-width: 280px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+    .document-item h4 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #337ab7;
+    }
+    .document-item p {
+        margin-bottom: 15px;
+        font-size: 0.9em;
+        color: #555;
+    }
+    .document-item a.download-link {
+        display: inline-block;
+        background-color: #337ab7;
+        color: white;
+        padding: 8px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 0.9em;
+        transition: background-color 0.2s;
+    }
+    .document-item a.download-link:hover {
+        background-color: #286090;
+    }
+    .row img { 
+        max-width: 250px; 
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 8px; 
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        transition: transform 0.2s ease;
+    }
+     .row img:hover {
+        transform: scale(1.05);
+    }
+    .row embed, .row iframe { 
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        min-width: 300px; 
+        width: 100%; /* Make embeds/iframes take full width of their .document-item or .row */
+        height: 450px; /* Default height */
+    }
+    
+    #contact p a {
+        color: #e67e22;
+        font-weight: bold;
+    }
+
+    img {
+      display: block; 
+      background-color: #eee; 
+      position: relative;
+    }
+    img::after {
+      content: attr(alt) " (Imagen no disponible)";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: #f0f0f0;
+      color: #777;
+      font-size: 0.9em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      opacity: 0; 
+      pointer-events: none; 
+    }
+    img:error::after {
+      opacity: 1; 
+    }
+    img:error {
+      border: 1px dashed #ccc; 
+      height: 150px; 
+    }
+
+    .placeholder-img { /* Already present, good for U4/U5 placeholders if no content yet */
+        width: 100%;
+        height: 200px; 
+        background-color: #e9ecef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6c757d;
+        font-size: 1em;
+        border-radius: 5px;
+        border: 1px dashed #ced4da;
+        margin: 10px 0;
+    }
+
+    video {
+        max-width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: block; 
+        margin: 20px auto; 
+    }
+    .about-row {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        color: #eee; 
+    }
+    .about-row > div {
+        background-color: rgba(0,0,0,0.5);
+        padding: 20px;
+        border-radius: 8px;
+        flex-basis: 45%;
+        min-width: 280px;
+    }
+    .about-row h4 {
+        color: #e67e22; 
+        margin-top: 0;
+    }
+    .about-row p.large {
+        font-size: 1.1em;
+        margin-bottom: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <header id="mainheader">
+    <nav id="navbar">
+      <div class="container">
+        <a href="#mainheader" class="logo">
+          <img src="logo2.png" alt="Logo" onerror="this.style.display='none'; const p=document.createElement('p'); p.textContent='Logo Error'; this.parentNode.insertBefore(p,this);" />
+        </a>
+        <ul>
+          <li><a href="#TEMARIO">TEMARIO</a></li>
+          <li><a href="#unidades">UNIDADES</a></li>
+          <li><a href="#video">VIDEO</a></li> 
+          <li><a href="#exposicionesM">MATERIAL</a></li> 
+          <li><a href="#exposiciones">ODS</a></li> 
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="showcase">
+      <div class="container">
+        <h1>Bienvenido al Portafolio</h1>
+        <p>Comprometidos con el Desarrollo Sustentable</p>
+        <a href="#unidades" class="btn btn-outline">Explorar Unidades</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="mensaje-central"> 
+    <h1>Comprometidos con el Desarrollo Sustentable</h1>
+    <p>Construyamos juntos un futuro más verde, justo y sostenible.</p>
+    <p>Gallo Abarca Luis Jesus 41T.</p>
+  </div>
+
+  <section id="TEMARIO">
+    <div class="container">
+      <h2><span>TEMARIO</span></h2>
+      <div class="row">
+        <embed src="docs/AC008-Desarrollo-Sustentable-4.pdf" type="application/pdf" width="80%" height="600px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="unidades">
+    <div class="container">
+      <h2><span>UNIDADES</span></h2>
+      <div class="unit-container">
+        <div class="unit">
+          <img src="f1.jpg" alt="Unidad I" />
+          <h3>Unidad I</h3>
+          <a href="#tareas_unidad1">Ver Unidad I</a>
+        </div>
+        <div class="unit">
+          <img src="f2.jpg" alt="Unidad II" />
+          <h3>Unidad II</h3>
+          <a href="#tarjetas_unidad2">Ver Unidad II</a>
+        </div>
+        <div class="unit">
+          <img src="f3.jpg" alt="Unidad III" />
+          <h3>Unidad III</h3>
+          <a href="#tarjetas_unidad3">Ver Unidad III</a>
+        </div>
+        <div class="unit">
+          <img src="f4.jpg" alt="Unidad IV" />
+          <h3>Unidad IV</h3>
+          <a href="#tarjetas_unidad4">Ver Unidad IV</a>
+        </div>
+        <div class="unit">
+          <img src="f5.jpg" alt="Unidad V" />
+          <h3>Unidad V</h3>
+          <a href="#tarjetas_unidad5">Ver Unidad V</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="video">
+    <div class="container">
+      <h2><span>Video de Concientizacion</span></h2>
+      <video width="640" height="360" controls>
+        <source src="VIDEO.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de videos.
+      </video>
+    </div>
+  </section>
+  
+  <section id="tareas_unidad1">
+    <div class="container">
+      <h2><span>Tareas de la Unidad I</span></h2>
+      <div class="row">
+        <img src="TAREA1.jpg" alt="Tarea 1"/>
+        <img src="TAREA2.jpg" alt="Tarea 2"/>
+        <img src="TAREAA.jpg" alt="Tarea 3"/>
+        <img src="TAREAAA.jpg" alt="Tarea 4"/>
+        <img src="TAREAAAA.jpg" alt="Tarea 5"/>
+        <img src="EXAMENU1.jpg" alt="Tarea 6"/>
+        <embed src="docs/Sutentabilidad (2).pdf" type="application/pdf" width="100%" height="400px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="tarjetas_unidad2">
+    <div class="container">
+      <h2><span>Tareas de la Unidad II</span></h2>
+      <div class="row">
+        <img src="TAREA1_U2.jpg" alt="Tarea 1 Unidad II" />
+        <embed src="docs/Investigación de campo ecosistema.pdf" type="application/pdf" width="100%" height="400px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="tarjetas_unidad3">
+    <div class="container">
+      <h2><span>Tareas de la Unidad III</span></h2>
+      <div class="row">
+        <img src="TAREA2_U2.jpg" alt="Tarea 1 Unidad III" /> 
+        <img src="TAREAA2_U2.jpg" alt="Tarea 2 Unidad III" /> 
+      </div>
+    </div>
+  </section>
+
+  <section id="tarjetas_unidad4">
+    <div class="container">
+      <h2><span>Contenido de la Unidad IV</span></h2>
+      <div class="row">
+        <div class="document-item">
+          <h4>Tareas Unidad IV</h4>
+          <p>Tareas.</p>
+          <embed src="docs/Conceptos_ds.pdf" type="application/pdf" width="100%" height="400px" />
+          <embed src="docs/Tarea_PIB.pdf" type="application/pdf" width="100%" height="400px" />
+          <embed src="docs/Video-lahistoriadelascosas.pdf" type="application/pdf" width="100%" height="400px" />
+          <p style="margin-top:10px;"><a href="docs/unidad4_documento1.pdf" download class="download-link">Descargar PDF</a></p>
+        </div>
+
+       
+        </div>
+    </div>
+  </section>
+
+  <section id="tarjetas_unidad5">
+    <div class="container">
+      <h2><span>Contenido de la Unidad V</span></h2>
+      <div class="row">
+        <div class="document-item">
+          <h4>TAREAS UNIDAD V</h4>
+          <p>tareas</p>
+          <embed src="docs/Huella_DS (1).pdf" type="application/pdf" width="100%" height="400px" />
+          <embed src="docs/contaminacion_ambiental.pdf" type="application/pdf" width="100%" height="400px" />
+          <embed src="docs/Situacion 1_merged (1).pdf" type="application/pdf" width="100%" height="400px" />
+          <embed src="docs/ReporteFinalSiembra.pdf" type="application/pdf" width="100%" height="400px" />
+          <p style="margin-top:10px;"><a href="docs/unidad5_guia_estudio.pdf" download class="download-link">Descargar PDF</a></p>
+        </div>
+
+        </div>
+    </div>
+  </section>
+
+  <section id="exposiciones">
+    <div class="container">
+      <h2><span>Objetivos de la ODS</span></h2>
+      <div class="row">
+        <embed src="docs/1- Fin de la pobreza,DS.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/HAMBRE CERO.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/3.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/4.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/5.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/6.pdf" type="application/pdf" width="31%" height="450px" /> 
+        <embed src="docs/7.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/8.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/9.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/10.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/11.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/12.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/13.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/14.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/15.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/16.pdf" type="application/pdf" width="31%" height="450px" />
+        <embed src="docs/17.pdf" type="application/pdf" width="31%" height="450px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="exposicionesM">
+    <div class="container">
+      <h2><span>Material de Trabajo</span></h2>
+      <div class="row">
+        <embed src="docs/UNIDAD 1 Desarrollo sustentable.pdf" type="application/pdf" width="45%" height="510px" />
+        <embed src="docs/Primer Sesión  Desarrollo Sustentable.pdf" type="application/pdf" width="45%" height="510px" />
+        <embed src="docs/Unidad 2 Desarrollo Sustentable A.pdf" type="application/pdf" width="45%" height="510px" />
+        <embed src="docs/INFORME BRUNDTLAND.pdf" type="application/pdf" width="45%" height="510px" />
+        <embed src="docs/Unidad 3 Desarrollo Sustentable.pdf" type="application/pdf" width="45%" height="510px" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2><span>About</span></h2>
+      <div class="about-row"> 
+        <div class="about-row-experience">
+          <h4>Experiencia</h4>
+          <p class="large">Experiencia en Basquetbol - 2020</p>
+          <p class="large">Soy Gallo</p>
+          <p class="large">Soy una persona Sustentable - 2024</p>
+        </div>
+        <div class="about-row-me">
+          <h4>Sobre mí</h4>
+          <p>Soy bueno jugando la mayoría de deportes y me gusta ser una persona sostenible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2><span>Contact</span></h2>
+      <p>Puedes contactarme al correo: <a href="mailto:tuemail@example.com">tuemail@example.com</a></p>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const mainNavSelector = '#navbar ul li a[href^="#"]'; 
+      const unitDetailLinkSelector = '.unit a[href^="#"]';   
+      const showcaseButtonSelector = '#showcase a.btn[href^="#"]'; 
+
+      const allToggleableSections = Array.from(document.querySelectorAll('section[id]'));
+
+      function hideAllToggleableSections() {
+        allToggleableSections.forEach(section => {
+          section.classList.add('hidden-content');
+        });
+      }
+
+      function showTargetSection(targetId) {
+        if (!targetId) return; 
+
+        hideAllToggleableSections(); 
+
+        const sectionToShow = document.getElementById(targetId);
+        if (sectionToShow) {
+          sectionToShow.classList.remove('hidden-content');
+
+          const isUnitTaskSection = targetId.startsWith('tareas_') || targetId.startsWith('tarjetas_');
+          
+          if (isUnitTaskSection && targetId !== 'unidades') {
+            const unidadesSection = document.getElementById('unidades');
+            if (unidadesSection) {
+              unidadesSection.classList.remove('hidden-content');
+            }
+          }
+        } else {
+          console.warn(`Section with ID '${targetId}' not found.`);
+        }
+      }
+
+      if (!document.querySelector('style#dynamic-hide-style')) {
+        const styleElement = document.createElement('style');
+        styleElement.id = 'dynamic-hide-style';
+        styleElement.textContent = '.hidden-content { display: none !important; }';
+        document.head.appendChild(styleElement);
+      }
+      
+      hideAllToggleableSections();
+
+      const allTriggerLinks = document.querySelectorAll(
+        `${mainNavSelector}, ${unitDetailLinkSelector}, ${showcaseButtonSelector}`
+      );
+
+      allTriggerLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+          const hrefAttribute = this.getAttribute('href');
+          if (hrefAttribute && hrefAttribute.startsWith('#')) {
+            const targetId = hrefAttribute.substring(1);
+            if (targetId) { 
+                event.preventDefault(); 
+                showTargetSection(targetId);
+                const shownSection = document.getElementById(targetId);
+                if(shownSection) {
+                    setTimeout(() => {
+                         shownSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }, 50);
+                }
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

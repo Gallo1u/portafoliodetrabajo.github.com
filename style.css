@@ -1,0 +1,298 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.mensaje-central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 600px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.mensaje-central h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #2e7d32; /* verde oscuro */
+}
+
+.mensaje-central p {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+
+html,
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2{
+    font-size: 1.8rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-bottom: 50px;
+}
+
+h4{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    padding-bottom: 20px;
+    font-weight: 500;
+}
+
+p{
+    font-size: 1rem;
+    margin: 10px 0;
+    line-height: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+.container{
+    margin: auto;
+    max-width: 1300px;
+    overflow: auto;
+    padding: 0 20px;
+}
+
+.large{
+    font-size: 20px;
+}
+
+.btn{
+    display: inline-block;
+    font-size: 15px;
+    padding: 15px 40px;
+    letter-spacing: 1px;
+}
+
+.btn-outline{
+    background: transparent;
+    border: 1px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.btn-outline:hover{
+background: #fff;
+color: black;
+}
+
+#navbar{
+    overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#navbar a{
+    color: black;
+}
+
+#navbar .logo{
+    float: left;
+    padding-top: 12px;
+}
+
+#navbar img{
+    height: 80px ;
+    width: 160px;
+}
+
+#navbar ul{
+    list-style: none;
+    float: right;
+}
+
+#navbar ul li{
+    float: left;
+}
+
+#navbar ul li{
+    display: block;
+    padding: 20px;
+    text-align: center;
+}
+
+
+#showcase{
+    background: url(atras.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    text-align: center;
+    padding: 190px;
+}
+
+#showcase .btn{
+    margin-top: 250px;
+}
+
+
+#projects{
+    padding: 80px 0;
+
+}
+
+.projects-row{
+    display: flex;
+}
+
+.projects-row img{
+    width: 100%;
+}
+
+
+#about{
+    padding: 80px 0;
+    background: #f9f9f9f9;
+}
+
+.about-row{
+    display: flex;
+}
+
+.about-row-experience,
+.about-row-me{
+    width: 50%;
+    padding-left: 50px;
+}
+
+
+
+#contact{
+    padding: 80px 0;
+}
+
+.contact-row{
+    display: flex;
+}
+
+.contact-row-icon{
+    width: 33%;
+    text-align: center;
+}
+
+.contact-row-icon img{
+    height: 80px;
+}
+
+.unit {
+    position: relative;
+    display: inline-block;
+}
+
+.unit-container img {
+    max-width: 250px; /* Establece el ancho máximo para las imágenes */
+    height: 200px; /* La altura se ajustará automáticamente para mantener la proporción */
+    display: block;
+    margin: auto; /* Centra la imagen horizontalmente */
+}
+
+.unit h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho del contenedor padre */
+    margin: 0;
+    padding: 5px;
+    background-color: rgba(1, 0, 1, 1);
+    color: #fff;
+    text-align: center; /* Centra el texto horizontalmente */
+    z-index: 1; /* Para que el texto esté encima de la imagen */
+}
+
+.unit button {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px 0; /* Ajusta el margen inferior del botón */
+    padding: 10px 20px; /* Ajusta el padding del botón */
+    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    border: none;
+    color: black;
+    cursor: pointer;
+    z-index: 1; /* Para que el botón esté encima de la imagen */
+}
+
+.unit button:hover {
+    background-color: rgba(255, 255, 255, 0.9); /* Cambia el color al pasar el cursor */
+}
+
+#reglamento {
+    display: flex;
+    justify-content: center; /* Alinea horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+}
+
+#reglamento .container {
+    text-align: center; /* Alinea el texto dentro del contenedor */
+}
+#video .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+#tareas_unidad1 .row img {
+    max-width: 380px; /* Define un ancho máximo para todas las imágenes */
+    height: 190; /* La altura se ajustará automáticamente para mantener la proporción */
+}
+
+#investigacion_unidad1 .container {
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+#investigacion_unidad1 .row {
+    display: inline-block; /* Permite centrar el elemento dentro del contenedor */
+}
+
+
+#tarjetas_unidad2 .container {
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+#tarjetas_unidad2 .row {
+    display: flex; /* Usa flexbox para alinear las imágenes */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    margin: 20px 0; /* Agrega espacio entre la fila y otros elementos */
+}
+
+#tarjetas_unidad2 .row img {
+    max-width: 300px; /* Define un tamaño máximo para las imágenes */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    margin: 0 10px; /* Agrega margen a las imágenes para separarlas */
+}
+
+#tarjetas_unidad3 .container {
+    text-align: center; /* Alinea el contenido al centro horizontalmente */
+}
+
+#tarjetas_unidad3 .row {
+    display: flex; /* Usa flexbox para alinear la imagen */
+    justify-content: center; /* Centra la imagen horizontalmente */
+    margin: 20px 0; /* Agrega espacio entre la imagen y otros elementos */
+}
+
+#tarjetas_unidad3 .row img {
+    max-width: 400px; /* Define un tamaño máximo para la imagen */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+}
